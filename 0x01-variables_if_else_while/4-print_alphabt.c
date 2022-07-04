@@ -16,7 +16,6 @@ while (f <= 'z')
 }
 if (f != 'q' && f != 'e')
 {
-	putchar(f);
 	f++;
 }
 putchar('\n');
