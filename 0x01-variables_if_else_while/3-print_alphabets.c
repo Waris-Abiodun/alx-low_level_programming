@@ -5,7 +5,7 @@
  * main -> write a letter from a-z in upper and lower case
  * Description: print the alphabet in lower case
  *
- * return: 0
+ * Return: Always 0 (Success)
  */
 
 int main(void)
