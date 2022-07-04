@@ -1,22 +1,24 @@
 #include <stdio.h>
 /**
- * main - main block
- * Description: Get a random number and check its last digit, compare it with 5
- * Return: 0
+ * main -> write a letter from a-z in upper and lower case
+ * Description:print the alphabet in lower case
+ *
+ * Return : Always 0 (Success)
  */
+
 int main(void)
 {
-	char c = 'a';
-
-	while (c <= 'z')
-	{
-		if (c != 'e' && c != 'q')
-		{
-			putchar(c);
-		}
-		c++;
-	}
-
-	putchar('\n');
-	return (0);
+char f;
+f = 'a';
+while (f <= 'z')
+{
+	putchar(f);
+}
+if (f != 'q' && f != 'e')
+{
+	putchar(f);
+	f++;
+}
+putchar('\n');
+return (0);
 }
