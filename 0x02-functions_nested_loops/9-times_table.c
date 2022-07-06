@@ -5,11 +5,9 @@
  */
 void times_table(void)
 {
-	int a;
+	int a = 0;
 	int b;
 	int multiply;
-
-	a = 0;
 
 	for (a <= 9)
 	{
