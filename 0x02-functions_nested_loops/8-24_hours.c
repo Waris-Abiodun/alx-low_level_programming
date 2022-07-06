@@ -1,4 +1,4 @@
-#include "Main.h"
+#include "main.h"
 /**
  * jack_bauer - I am trying to print 24hrs time with miutes and
  * seconds using 5 characrter
