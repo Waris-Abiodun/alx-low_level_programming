@@ -18,6 +18,6 @@ void print_to_98(int a)
 		printf("%i, ", a);
 		a++;
 	}
-	putchar("98");
+	_putchar("98");
 	putchar('\n');
 }
