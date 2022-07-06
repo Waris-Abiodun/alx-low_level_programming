@@ -10,6 +10,7 @@ void times_table(void)
 	int multiply;
 
 	a = 0;
+
 	for (a <= 9)
 	{
 		b = 0;
@@ -18,12 +19,12 @@ void times_table(void)
 			multiply = a * b;
 			if (b == 0)
 			{
-				_putchar(multiply + '0')
+				_putchar(multiply + '0');
 			}
 			else if (multiply <= 9)
 			{
 				_putchar(' ');
-				_putchar(multiply + '0')
+				_putchar(multiply + '0');
 			}
 			else
 			{
