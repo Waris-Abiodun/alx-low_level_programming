@@ -15,7 +15,7 @@
 	}
 	else if (n > 0)
 	{
-		sign = 1
+		sign = 1;
 		_putchar('+');
 	}
 	else (n < 0)
