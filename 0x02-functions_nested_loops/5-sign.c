@@ -1,10 +1,12 @@
 #include "main.h"
+
 /**
- * print_sign - another fun time with c programming 
- * Description: a fun test on the return valu
+ * print_sign -fun time with c programming
+ * @n: omoo wahala
+ * Description: a fun test on the return value
  * Return: + - 0
  */
- int print_sign(int n)
+int print_sign(int n)
 {
 	int sign;
 
