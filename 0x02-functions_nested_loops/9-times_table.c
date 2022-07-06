@@ -9,10 +9,10 @@ void times_table(void)
 	int b;
 	int multiply;
 
-	for (a <= 9)
+	while (a <= 9)
 	{
 		b = 0;
-		for (b <= 9)
+		while (b <= 9)
 		{
 			multiply = a * b;
 			if (b == 0)
