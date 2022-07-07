@@ -13,22 +13,6 @@ void print_times_table(int n)
 	if (n < 0 || n > 15)
 
 		return;
-	else
-	{
-		_printf("%d", n);
-	}
-	return;
-}
-/**
- * print_times_tables - secod line
- * @n : parameter to test
- * Description: ithink
- * Return: nothng
- *
- */
-int print_times_tables(int n)
-{
-	int row = 0, column, result;
 
 	while (row <= n)
 
