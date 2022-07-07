@@ -15,8 +15,7 @@ void print_times_table(int n)
 		return;
 	else
 	{
-		_putchar(n);
-		_puthar('\n');
+		_printf("%d", n);
 	}
 	return;
 }
