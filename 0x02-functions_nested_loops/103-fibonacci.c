@@ -11,7 +11,7 @@ int main(void)
 
 	while (fib < 4000000)
 	{
-		next = a + b;
+		fib = a + b;
 		a = b;
 		b = fib;
 
