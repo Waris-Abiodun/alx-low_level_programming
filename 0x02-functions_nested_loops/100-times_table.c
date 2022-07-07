@@ -7,6 +7,8 @@
  */
 void print_times_table(int n)
 {
+	int row = 0, column, result;
+
 	print_times_tables(n);
 	if (n < 0 || n > 15)
 
@@ -19,7 +21,7 @@ void print_times_table(int n)
  * Return: nothng
  *
  */
-void print_times_tables(int n)
+int print_times_tables(int n)
 {
 	int row = 0, column, result;
 
@@ -58,6 +60,6 @@ void print_times_tables(int n)
 		}
 		_putchar('\n');
 		row++;
-		return;
+		return (n);
 	}
 }
