@@ -16,13 +16,13 @@ int main(void)
 		fib= a + b;
 		a = b;
 		b = fib;
-		printff("%lu", fib);
+		printf("%lu", fib);
 
 		if (i < 49)
 		{
 			printf(", ");
 		}
-		i+=;
+		i++;
 	}
 	putchar('\n');
 
