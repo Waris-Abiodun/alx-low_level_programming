@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_times_tables - prints timetable only if < 15
+ * print_times_table - prints timetable only if < 15
  * @n: use to input up to the timetable you want
  * Description: i think i am getting into C
  * Return: void and result
@@ -12,8 +12,20 @@ void print_times_table(int n)
 	if (n < 0 || n > 15)
 
 		return;
+}
+/**
+ * print_times_tables - secod line
+ * @n : parameter to test
+ * Description: ithink
+ * Return: nothng
+ *
+ */
+void print_times_tables(int n)
+{
+	int row = 0, column, result;
 
 	while (row <= n)
+
 	{
 		for (column = 0; column <= n; column++)
 		{
@@ -47,5 +59,6 @@ void print_times_table(int n)
 		}
 		_putchar('\n');
 		row++;
+		return;
 	}
 }
