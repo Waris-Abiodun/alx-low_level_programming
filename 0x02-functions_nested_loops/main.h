@@ -11,7 +11,4 @@ void times_table(void);
 int add(int, int);
 void print_to_98(int n);
 void print_times_table(int n);
-int _printf(char n)
-{
-	printf("_printf = %d\n", n);
-}
+int _printf(int n);
