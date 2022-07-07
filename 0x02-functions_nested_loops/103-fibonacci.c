@@ -16,7 +16,7 @@ int main(void)
 		b = fib;
 
 		if (fib % 2 == 0)
-			sum += next;
+			sum += fib;
 	}
 	printf("%i\n", sum);
 	return (0);
