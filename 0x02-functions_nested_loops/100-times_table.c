@@ -9,10 +9,16 @@ void print_times_table(int n)
 {
 	int row = 0, column, result;
 
-	print_times_tables(n);
+	
 	if (n < 0 || n > 15)
 
 		return;
+	else
+	{
+		_putchar(n);
+		_puthar('\n');
+	}
+	return;
 }
 /**
  * print_times_tables - secod line
