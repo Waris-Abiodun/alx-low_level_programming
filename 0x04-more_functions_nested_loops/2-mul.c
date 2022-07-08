@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio>
 
 /**
  * mul multiply two integers x and y
