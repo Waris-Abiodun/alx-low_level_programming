@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * *print_number - print an integer
  * @n: parameter
@@ -9,7 +10,7 @@ void print_number(int n)
 {
 	unsigned int i = n;
 
-	f (n < 0)
+	if (n < 0)
 	{
 		_putchar('-');
 		i = -i;
