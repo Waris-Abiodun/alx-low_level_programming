@@ -2,20 +2,23 @@
 #include <stdio.h>
 
 /**
- * _isupper - i want o print aupper letter
- * @c: parameter
+ * main - i want o print aupper letter
  * Desctiption: lets test with range of capital letter
  * Return: 1 for capital letter and 0 for other
  */
 
-int _isupper(int c)
+int main(void)
 {
-	if (c >= 'A' && c <= 'z')
+	char c;
+
+	for (c = 'A')
 	{
-		return (1);
-	}
-	else
-	{
+		printf("%c: %d\n", c, _isupper(c));
 		return (0);
+	}
+	for (c = 'a')
+	{
+		printf("%c: %d\n", c, _isupper(c));
+		return (1);
 	}
 }
