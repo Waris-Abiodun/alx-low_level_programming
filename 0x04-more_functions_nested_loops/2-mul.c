@@ -1,8 +1,7 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * mul multiply two integers x and y
+ * mul - multiply two integers x and y
  * @b: first int
  * @a: second int
  * Return: multiply x and y
