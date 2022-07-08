@@ -8,4 +8,6 @@
  * Return: multiply x and y
  */
 int mul(int a, int b)
+{
 	return (a *  b);
+}
