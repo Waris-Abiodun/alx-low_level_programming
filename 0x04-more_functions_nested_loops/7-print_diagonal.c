@@ -7,7 +7,7 @@
  * Return: void
  */
 
-oid print_diagonal(int n)
+void print_diagonal(int n)
 {
 	int i;
 	int space;
