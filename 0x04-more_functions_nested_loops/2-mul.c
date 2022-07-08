@@ -6,5 +6,5 @@
  * @a: second int
  * Return: multiply x and y
  */
-int mul(inta , int b)
+int mul(int a, int b)
 	return (a *  b);
