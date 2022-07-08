@@ -3,10 +3,9 @@
 #include <stdlib.h>
 
 /**
- * Main -> print all single number of base 10
- * Description: all the single number will be printed
+ * Main -print 1 to 10
  *
- * Return: always (0) success
+ * Return: Always 0 (Success)
  */
 
 int main(void)
