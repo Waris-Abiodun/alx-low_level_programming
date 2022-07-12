@@ -6,7 +6,8 @@
  * reset_to_98 - take pointer to an int and update the value
  * @n : integer n as a parameter
  * Return: void
-i */
+ */
+
 void reset_to_98(int *n)
 {
 	*n = 98;
