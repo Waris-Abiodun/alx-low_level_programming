@@ -1,8 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * swao_int - swap the values of inentegers using pointer
- * @a: interger a 
+ * swap_int - swap the values of inentegers using pointer
+ * @a: interger a
  * @b :  integer b
  * Return : nothing
  */
