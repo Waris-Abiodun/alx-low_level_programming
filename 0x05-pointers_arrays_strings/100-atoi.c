@@ -1,6 +1,6 @@
 #include "main.h"
 
-/***
+/**
  * _atoi - converting a string to n integer
  * @s : char type of string
  * Return: integer converted
