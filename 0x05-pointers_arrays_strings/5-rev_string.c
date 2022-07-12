@@ -2,23 +2,25 @@
 #include <stdio.h>
 
 /**
- * rev_string - print reverse string 
- * @s: string to be printed
- * Return: void
+ * rev_string - reverse the string
+ * @s : string to be tested
+ * Return : void
  */
+
 void rev_string(char *s)
 {
-	char rev = s[0];
-	int f = 0;
-	int i;
+	int x, y, temp = 0;
 
-	while (s[f] != '\0')
-		f++;
-	for (i = 0; i < f; i++)
+	while (s[x] != '\0')
 	{
-		f--;
-		rev = s[i];
-		s[i] = s(f);
-		s[f] = rev;
+		x++;
+	}
+	x--;
+
+	for (y = 0; x > y; y++, x--)
+	{
+		temp = s[x];
+		s[x] = s[y];
+		s[y] = temp;
 	}
 }
