@@ -16,13 +16,13 @@ void rev_string(char *s)
 		;
 	i = 0;
 
-	y = x /2;
+	y = x / 2;
 
 	while (y--)
 	{
-		temp = s[x - i -1];
-		s[x - i -1] = s[i];
-		s[i] =temp;
+		temp = s[x - i - 1];
+		s[x - i  - 1] = s[i];
+		s[i] = temp;
 		i++;
 	}
 }
