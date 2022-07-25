@@ -21,8 +21,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	value = atoi(argv[1]);
-
-	if (value < 0)
+	else if (value < 0)
 	{
 		printf("%d\n", 0);
 		return (0);
