@@ -1,12 +1,13 @@
 #ifndef DOG_H
 #define DOG_H
 
-/*
- * struct dog - the data structure for dog
- * @name: the name o the dog
- * @age: the age of the dog
- * @owner: the owner of the dog
- * Description: an header function to beuse with all this code
+/**
+ * struct dog - The struct of dog
+ * @name: The name o the dog
+ * @age: The age of the dog
+ * @owner: The owner of the dog
+ *
+ * Description: An header function to beuse with all this code
  */
 struct dog
 {
