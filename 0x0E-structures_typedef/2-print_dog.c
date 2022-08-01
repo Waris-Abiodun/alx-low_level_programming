@@ -1,5 +1,6 @@
-#include <stdlib.h>
+#include <stdio.h>
 #include <dog.h>
+
 /**
  * print_dog - function to be called in main function
  * @d: memcpy from the struct function
