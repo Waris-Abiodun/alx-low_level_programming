@@ -1,36 +1,20 @@
 #include <stdio.h>
-#include <dog.h>
-
+#include "dog.h"
 /**
- * print_dog - function to be called in main function
- * @d: memcpy from the struct function
- * Description: The description of the print_dog
- * Return: void
+ * print_dog - print members of a structure dog
+ * @d: pointer to the structure
  */
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
-	{
 		return;
-	}
-
 	if (d->name == NULL)
-	{
 		printf("Name: (nil)\n");
-	}
 	else
-	{
 		printf("Name: %s\n", d->name);
-	}
-
 	printf("Age: %f\n", d->age);
-
 	if (d->owner == NULL)
-	{
 		printf("Owner: (nil)\n");
-	}
 	else
-	{
 		printf("Owner: %s\n", d->owner);
-	}
 }
