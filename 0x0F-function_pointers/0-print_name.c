@@ -5,8 +5,7 @@
  * @name: parameter to be pass that will store name
  * @f: the function pointer
  */
-void print_name(char *name, void (*f)(char *));
+void print_name(char *name, void (*f)(char *))
 {
-	if (name != NULL && f != NULL)
-		f(name);
+	f(name);
 }
