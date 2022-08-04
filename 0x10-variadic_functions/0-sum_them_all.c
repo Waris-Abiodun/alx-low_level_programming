@@ -13,7 +13,7 @@ int sum_them_all(const unsigned int n, ...)
 	unsigned int i;
 
 	va_start(arg, n);
-	if (n == 0)
+	if (n == NULL)
 		return (0);
 	for (i = 0; i < n; i++)
 	{
