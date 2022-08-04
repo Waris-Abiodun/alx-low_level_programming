@@ -5,14 +5,15 @@
 /**
  * print_strings - variadic function that print string
  * @separator: the string to be printed from main
- * @n: the number of strings passed 
+ * @n: the number of strings passed
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list arg;
 	unsigned int i;
 	char *p;
-	va_start(arg, n);	
+
+	va_start(arg, n);
 
 	for (i = 0; i < n; i++)
 	{
@@ -26,6 +27,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		else
 			printf("%s", separator);
 	}
-	va_end (arg);
+	va_end(arg);
 	printf("\n");
 }
