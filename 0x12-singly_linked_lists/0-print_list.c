@@ -6,7 +6,6 @@
 * @h: pointer
 * Return: number of nodes
 */
-
 size_t print_list(const list_t *h)
 {
 	size_t nodes = 0;
@@ -14,11 +13,12 @@ size_t print_list(const list_t *h)
 
 	while (c != NULL)
 	{
-		char *b = c->str != NULL ? c->str : "(nil)";
-
-		printf("[%d] %s\n", c->len, b);
+		printf("[%d] %s\n", c->len,
+		c->str != NULL ? c->str : "(nil)");
 		c = c->next;
 		nodes++;
 	}
+
 	return (nodes);
+
 }
