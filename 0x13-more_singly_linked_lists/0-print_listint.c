@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include "lists.h"
-#include <stdlib.h>
 
 /**
  * print_listint - a function that pint the data in the node
@@ -9,12 +7,15 @@
  */
 size_t print_listint(const listint_t *h)
 {
+	listint_t *k;
 	size_t node = 0;
 
-	while (h != NULL)
+	k = malloc(sizeof(listint_t));
+	k = h;
+	while (k != NULL)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", k->n);
+		k = k->next;
 		node++;
 	}
 	return (node);
