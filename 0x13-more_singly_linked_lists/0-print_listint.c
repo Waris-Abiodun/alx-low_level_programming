@@ -9,15 +9,12 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	listint_t *k;
 	size_t node = 0;
 
-	k = malloc(sizeof(listint_t));
-	k = h;
-	while (k != NULL)
+	while (h != NULL)
 	{
-		printf("%d\n", k->n);
-		k = k->next;
+		printf("%d\n", h->n);
+		h = h->next;
 		node++;
 	}
 	return (node);
