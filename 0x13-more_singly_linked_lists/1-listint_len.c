@@ -9,9 +9,9 @@ size_t print_listint(const listint_t *h)
 {
 	size_t node = 0;
 
-	while (k != NULL)
+	while (h != NULL)
 	{
-		k = k->next;
+		h = h->next;
 		node++;
 	}
 	return (node);
