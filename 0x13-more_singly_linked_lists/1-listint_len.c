@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * print_listint - a function that pint the data in the node
+ * listint_len - a function that return number of nodes 
  * @h: nodes to be passed
- * Return: the number ofnodes we printed
+ * Return: the number ofnodes
  */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	size_t node = 0;
 
