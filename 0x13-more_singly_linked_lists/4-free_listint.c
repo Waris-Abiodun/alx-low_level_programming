@@ -1,18 +1,18 @@
 #include "lists.h"
 
 /**
- * free_listint - to check if memory are manage effectively
- * @head: node pointer
+ * free_listint - frees a linked list
+ * @head: head of a list.
+ *
+ * Return: no return.
  */
 void free_listint(listint_t *head)
 {
-	listint_t *node = head;
+	listint_t *temp;
 
-
-	while  ((node = head) != NULL)
+	while ((temp = head) != NULL)
 	{
-		node = node->next;
-		free(node);
+		head = head->next;
+		free(temp);
 	}
-
 }
