@@ -6,9 +6,13 @@
  * @n: integer to be printed
  * Return: node that are to be printed
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *node = node;
+	listint_t *node;
+	listint_t *order = *head;
+
+	if (order && order->next != NULL)
+		order = order->next;
 
 	node = malloc(sizeof(listint_t));
 	if (node == NULL)
@@ -18,7 +22,14 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	}
 	node->n = n;
 	node->next = *head;
-	*head = node;
+	if (order != NULL)
+	{
+		order->next = node;
+	}
+	else
+	{
+		*head = node;
+	}
 
-	return (*head);
+	return (order);
 }
