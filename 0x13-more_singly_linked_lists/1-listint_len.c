@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * listint_len - a function that return number of nodes 
+ * listint_len - a function that return number of nodes
  * @h: nodes to be passed
  * Return: the number ofnodes
  */
