@@ -1,22 +1,23 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * print_listint - a function that pint the data in the node
- * @h: nodes to be passed
- * Return: the number ofnodes we printed
- */
+ * print_listint - Print elements of a singly linked list.
+ * @h: Pointer to a list.
+ * Return: Integer.
+ **/
 size_t print_listint(const listint_t *h)
 {
-	const listint_t *k;
-	size_t node = 0;
+	const listint_t *tp;
+	unsigned int cntr = 0;
 
-	k = malloc(sizeof(listint_t));
-	k = h;
-	while (k != NULL)
+	tp = h;
+	while (tp)
 	{
-		printf("%d\n", k->n);
-		k = k->next;
-		node++;
+		printf("%d\n", tp->n);
+		cntr++;
+		tp = tp->next;
 	}
-	return (node);
+	return (cntr);
+
 }
