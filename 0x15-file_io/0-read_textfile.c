@@ -1,44 +1,40 @@
 #include "main.h"
 
 /**
- * read_textfile - a function that print texts out base on number of lines
- * @filename : this will pass the letter we want o print
- * @letters :max number of letter we can print
- * Return: The number of character to be printed
+ * read_textfile - reads a text file and prints it to the POSIX standard output
+ * @filename: name of the file to read
+ * @letters: number of letters it should read and print
+ *
+ * Return: actual number of letters it could read and print
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t noRead;
-	ssize_t noWrite;
 	int fd;
-	char *buff;
+	ssize_t lenr, lenw;
+	char *buffer;
 
 	if (filename == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
-
 	if (fd == -1)
 		return (0);
-
-	buff = malloc(sizeof(char) * letters);
-	if (buff == NULL)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 	{
-		close (fd);
+		close(fd);
 		return (0);
 	}
-
-	noWrite = write(fd, buff, letters);
-	close (fd);
-	if (noWrite == -1)
+	lenr = read(fd, buffer, letters);
+	close(fd);
+	if (lenr == -1)
 	{
-		free (buff);
+		free(buffer);
 		return (0);
 	}
-	noRead = read(STDOUT_FILENO, buff, noWrite);
-
-	free(buff);
-	if (noRead != noWrite)
+	lenw = write(STDOUT_FILENO, buffer, lenr);
+	free(buffer);
+	if (lenr != lenw)
 		return (0);
 
-	return (noRead);
+	return (lenw);
 }
