@@ -1,3 +1,1 @@
-creating dynamic library
-dynamic library are also shared library
-they are linked at run time
+This is the README file for Dynamic Library
