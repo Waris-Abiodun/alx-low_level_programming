@@ -9,14 +9,15 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *myHash =  NULL;
+
 	myHash = malloc(sizeof(hash_table_t));
 	if (myHash == NULL)
 		return (NULL);
 	myHash->size = size;
-	myHash->array = malloc(sizeof(void *) * size);	
+	myHash->array = malloc(sizeof(void *) * size);
 	if ((myHash->array) == NULL)
 	{
-		free (myHash);
+		free(myHash);
 		return (NULL);
 	}
 	return (myHash);
