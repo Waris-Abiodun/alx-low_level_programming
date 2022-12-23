@@ -1,44 +1,65 @@
 #include "hash_tables.h"
+
 /**
- * hash_table_set - a function that set or update the value of a key
- * Description : the first if is use to update the value of a key,
- * if the key has already existed, the else wil key create a new key
- * assigned t value and add it to previous or new node if a node is 
- * existing or not respectively
- * @ht: the hash table to be updated
- * @key: the string we will use to generate key
- * @value: the value we want to assigned to our key by
- * copying the address
- * Retun: 1 on sucess , 0 on Failure
+ * add_n_hash - adds a node at the beginning of a hash at a given index
+ *
+ * @head: head of the hash linked list
+ * @key: key of the hash
+ * @value: value to store
+ * Return: head of the hash
+ */
+hash_node_t *add_n_hash(hash_node_t **head, const char *key, const char *value)
+{
+	hash_node_t *tmp;
+
+	tmp = *head;
+
+	while (tmp != NULL)
+	{
+		if (strcmp(key, tmp->key) == 0)
+		{
+			free(tmp->value);
+			tmp->value = strdup(value);
+			return (*head);
+		}
+		tmp = tmp->next;
+	}
+
+	tmp = malloc(sizeof(hash_node_t));
+
+	if (tmp == NULL)
+		return (NULL);
+
+	tmp->key = strdup(key);
+	tmp->value = strdup(value);
+	tmp->next = *head;
+	*head = tmp;
+
+	return (*head);
+}
+
+/**
+ * hash_table_set - adds a hash (key, value) to a given hash table
+ *
+ * @ht: pointer to the hash table
+ * @key: key of the hash
+ * @value: value to store
+ * Return: 1 if successes, 0 if fails
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long index;
-	hash_node_t *new_node = NULL;
+	unsigned long int k_index;
 
-	if (ht == NULL || key == NULL || value == NULL)
+	if (ht == NULL)
 		return (0);
 
-	index = key_index((const unsigned char *)key, ht->size);
-	if (ht->array[index] != NULL && strcmp(ht->array[index]->key, key) == 0)
-	{
-		ht->array[index]->value = strdup(value);
-		return (1);
-	
-	}
-	else
-	{
-		new_node = malloc(sizeof(hash_node_t));
-		if (new_node == NULL)
-			return (0);
-		new_node->key = strdup(key);
-		new_node->value = strdup(value);
-		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
+	if (key == NULL || *key == '\0')
+		return (0);
 
-		return (1);
+	k_index = key_index((unsigned char *)key, ht->size);
 
-	}
-	return (0);
-	
+	if (add_n_hash(&(ht->array[k_index]), key, value) == NULL)
+		return (0);
+
+	return (1);
 }
