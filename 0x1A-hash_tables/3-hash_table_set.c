@@ -1,65 +1,39 @@
 #include "hash_tables.h"
 
 /**
- * add_n_hash - adds a node at the beginning of a hash at a given index
+ * hash_table_set - entry point
+ * @ht: hash_table_t variable
+ * @key: const char variable
+ * @value: const char variable
  *
- * @head: head of the hash linked list
- * @key: key of the hash
- * @value: value to store
- * Return: head of the hash
- */
-hash_node_t *add_n_hash(hash_node_t **head, const char *key, const char *value)
-{
-	hash_node_t *tmp;
+ * Return: int variable
+*/
 
-	tmp = *head;
-
-	while (tmp != NULL)
-	{
-		if (strcmp(key, tmp->key) == 0)
-		{
-			free(tmp->value);
-			tmp->value = strdup(value);
-			return (*head);
-		}
-		tmp = tmp->next;
-	}
-
-	tmp = malloc(sizeof(hash_node_t));
-
-	if (tmp == NULL)
-		return (NULL);
-
-	tmp->key = strdup(key);
-	tmp->value = strdup(value);
-	tmp->next = *head;
-	*head = tmp;
-
-	return (*head);
-}
-
-/**
- * hash_table_set - adds a hash (key, value) to a given hash table
- *
- * @ht: pointer to the hash table
- * @key: key of the hash
- * @value: value to store
- * Return: 1 if successes, 0 if fails
- */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int k_index;
+	int idx;
+	hash_node_t *new, *aux;
 
-	if (ht == NULL)
+	if (ht == NULL || key[0] == '\0')
+		return (0);
+	idx = key_index((unsigned char *)key, ht->size);
+
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
 		return (0);
 
-	if (key == NULL || *key == '\0')
-		return (0);
-
-	k_index = key_index((unsigned char *)key, ht->size);
-
-	if (add_n_hash(&(ht->array[k_index]), key, value) == NULL)
-		return (0);
+	aux = ht->array[idx];
+	if (ht->array[idx] != NULL && strcmp(key, (const char *)aux->key) == 0)
+	{
+		free(aux->value);
+		free(new);
+		aux->value = strdup(value);
+		return (1);
+	}
+	new->key = strdup(key);
+	new->value = strdup(value);
+	new->next = ht->array[idx];
+	ht->array[idx] = new;
 
 	return (1);
 }

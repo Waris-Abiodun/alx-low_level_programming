@@ -1,12 +1,12 @@
 #include "hash_tables.h"
 
 /**
- * hash_djb2 - function that generates a random number through
- * a string given (hash number)
+ * hash_djb2 - entry point
+ * @str: const unsigned char variable
  *
- * @str: string
- * Return: hash number
- */
+ * Return: unsigned long int variable
+*/
+
 unsigned long int hash_djb2(const unsigned char *str)
 {
 	unsigned long int hash;
