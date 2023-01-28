@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * linear_search - a function that searches for a value in an
+ * binary_search - a function that searches for a value in an
  * array of intege sing the Linear search algorithm
  * @array: where to look for the calue
  * @size: size of that array
@@ -10,21 +10,42 @@
  */
 
 
-int linear_search(int *array, size_t size, int value)
+int binary_search(int *array, size_t size, int value)
 {
-	unsigned int i = 0;
+	unsigned int m, k, l = 0;
+	unsigned int r = size;
+
 
 	if (array == NULL)
 		return (-1);
-	while (i < size)
+	while(l < r)
 	{
-		printf("Value checked array[%d] = [%d]\n", i, array[i]);
-		if (array[i] == value)
+		k = l;
+		printf("Searching in array: ");
+		while(k < r)
 		{
-			return (i);
+			if(k == r - 1)
+			{
+				printf("%d\n", array[k]);
+			}
+			else
+			{
+				printf("%d, ", array[k]);
+			}
+			k++;
 		}
-		i++;
-
+		m = ( l + r) / 2;
+		if(array[m] == value)
+			return (value);
+		else if (array[m] < value)
+		{
+			l = m + 1;
+		}
+		else
+		{
+			r = m - 1;
+		}
 	}
+	
 	return (-1);
 }
