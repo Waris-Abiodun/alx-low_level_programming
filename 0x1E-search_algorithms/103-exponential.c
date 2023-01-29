@@ -1,93 +1,75 @@
+/*
+ * File: 103-exponential.c
+ * Auth: Brennan D Baraban
+ */
+
 #include "search_algos.h"
 
 /**
- * jump_search - a function that searches for a value in an
- * array of intege sing the exponential search and binary search algorithm
- * @array: where to look for the calue
- * @size: size of that array
- * @value: the value to search for
- * Return: 0 on success
- */
-
-int exponential_search(int *array, size_t size, int value)
+  * _binary_search - Searches for a value in a sorted array
+  *                  of integers using binary search.
+  * @array: A pointer to the first element of the array to search.
+  * @left: The starting index of the [sub]array to search.
+  * @right: The ending index of the [sub]array to search.
+  * @value: The value to search for.
+  *
+  * Return: If the value is not present or the array is NULL, -1.
+  *         Otherwise, the index where the value is located.
+  *
+  * Description: Prints the [sub]array being searched after each change.
+  */
+int _binary_search(int *array, size_t left, size_t right, int value)
 {
-	int exp = 1;
-	int pre = 0;
-	int len = size;
-	int search;
+	size_t i;
 
 	if (array == NULL)
 		return (-1);
-	while(len > exp)
-	{
-		if (value > array[exp])
-		{
-			printf("Value checked array[%d] = [%d]\n", exp, array[exp]);
-			exp *= 2;
-		}
-		else
-		{
-			pre = exp / 2;
-			printf("Value found between indexes [%d] and [%d]\n", pre, exp);
-			search = My_binary_search(array, pre, exp + 1, value);
-			return (search);
-			break;
-		}
-	}
-	if (pre == 0)
-	{
-		pre = exp / 2;
-		printf("Value found between indexes [%d] and [%d]\n", pre, len - 1);
-		search = My_binary_search(array, pre, len, value);
-		return (search);
 
+	while (right >= left)
+	{
+		printf("Searching in array: ");
+		for (i = left; i < right; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
+
+		i = left + (right - left) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			right = i - 1;
+		else
+			left = i + 1;
 	}
 
 	return (-1);
 }
 
-/*
- * My_binary_search - a function that searches for a value in an
- * array of intege sing the Linear search algorithm
- * @array: where to look for the calue
- * @size: size of that array
- * @value: the value to search for
- * Return: 0 on success
- */
-
-int My_binary_search(int *array, int pre, int size, int value)
+/**
+  * exponential_search - Searches for a value in a sorted array
+  *                      of integers using exponential search.
+  * @array: A pointer to the first element of the array to search.
+  * @size: The number of elements in the array.
+  * @value: The value to search for.
+  *
+  * Return: If the value is not present or the array is NULL, -1.
+  *         Otherwise, the index where the value is located.
+  *
+  * Description: Prints a value every time it is compared in the array.
+  */
+int exponential_search(int *array, size_t size, int value)
 {
-        unsigned int m, k, l = pre;
-        unsigned int r = size;
+	size_t i = 0, right;
 
+	if (array == NULL)
+		return (-1);
 
-        if (array == NULL)
-                return (-1);
-        while (l < r)
-        {
-                k = l;
-                printf("Searching in array: ");
-                while (k < r)
-                {
-			if(k == r - 1)
-				printf("%d\n", array[k]);
-			else
-				printf("%d, ", array[k]);
-                        k++;
-                }
-                m = ((l + r) - 1) / 2;
-                if (array[m] == value)
-                        return(m);
-                else if (array[m] > value)
-                {
-                        r = m;
-                }
-                else
-                {
-                        l = m + 1;
-                }
-        }
+	if (array[0] != value)
+	{
+		for (i = 1; i < size && array[i] <= value; i = i * 2)
+			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	}
 
-        return (-1);
+	right = i < size ? i : size - 1;
+	printf("Value found between indexes [%ld] and [%ld]\n", i / 2, right);
+	return (_binary_search(array, i / 2, right, value));
 }
-
